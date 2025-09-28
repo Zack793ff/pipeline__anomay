@@ -2,7 +2,6 @@ import asyncio
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 
-# Correct format 
 MONGO_URI = os.getenv(
     "MONGO_URI",
     "mongodb+srv://chidizack24_db_user:IUUrwdBsKicpDB7F@cluster0.2sqi1ni.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
@@ -10,6 +9,11 @@ MONGO_URI = os.getenv(
 
 DB_NAME = "anomaly_db"
 
-client = AsyncIOMotorClient(MONGO_URI)
-db = client[DB_NAME]
+# Force TLS for Render environment
+client = AsyncIOMotorClient(
+    MONGO_URI,
+    tls=True,
+    tlsAllowInvalidCertificates=False
+)
 
+db = client[DB_NAME]
