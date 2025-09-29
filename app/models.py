@@ -2,6 +2,7 @@ from pydantic import BaseModel, Field
 from typing import Optional
 
 class WellData(BaseModel):
+    id: Optional[int] = Field(default=None, alias="_id")
     wellhead_temp: float = Field(..., alias="Wellhead Temp. (C)")
     wellhead_press: float = Field(..., alias="Wellhead Press (psi)")
     mmcfd_gas: float = Field(..., alias="MMCFD- gas")
