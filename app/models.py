@@ -1,4 +1,5 @@
-from pydantic import BaseModel, Field
+from datetime import datetime
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Optional
 
 class WellData(BaseModel):
@@ -12,7 +13,6 @@ class WellData(BaseModel):
     co2: float = Field(..., alias="CO2 mol. (%) @ 25 C & 1 Atm.")
     gas_grav: float = Field(..., alias="Gas Grav.")
     corrosion_defect: float = Field(..., alias="CR-corrosion defect ")
-    timestamp: Optional[str] = None
+    timestamp: Optional[datetime] = None
 
-    class Config:
-        allow_population_by_field_name = True
+    model_config = ConfigDict(populate_by_name=True)
