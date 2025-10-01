@@ -26,10 +26,11 @@ TOKEN_EXPIRE_HOURS = 1
 # ----- Device public keys (PEM) -----
 DEVICE_PUBLIC_KEYS: Dict[str, str] = {
     "device123": """-----BEGIN PUBLIC KEY-----
-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAENkO1K7p0FjU6cbY5yA1v/ku8x3o9
-wVdxdr8IjpI+gQ0YH2tO0ld3rTP5g5IlOxT4JrH3ic1x+F4yK8iTtUZ0sw==
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEmZSmXgF0+TAbjJBMV9gzH4bNsuNb
++Ue9qb4YJ3VleoyepLkE7WOe7SE8CHzgJ0alPRFenM9M7KFSky+gyUMXeQ==
 -----END PUBLIC KEY-----"""
 }
+
 
 # ----- Temporary challenge storage -----
 CHALLENGES: Dict[str, bytes] = {}
