@@ -16,3 +16,11 @@ class WellData(BaseModel):
     timestamp: Optional[datetime] = None
 
     model_config = ConfigDict(populate_by_name=True)
+
+# Models
+class ChallengeRequest(BaseModel):
+    device_id: str
+
+class ChallengeResponse(BaseModel):
+    device_id: str
+    signature: str  # base64
